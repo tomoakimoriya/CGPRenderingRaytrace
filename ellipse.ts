@@ -52,7 +52,7 @@
         return -1;
     }
 
-    calcNom(p: THREE.Vector3): THREE.Vector3 {
+    calcNorm(p: THREE.Vector3): THREE.Vector3 {
         var mscale = new THREE.Matrix4().scale(new THREE.Vector3(1 / (this.size.x * this.size.x), 1 / (this.size.y * this.size.y), 1 / (this.size.z * this.size.z)));
         var postop = p;
         postop.sub(this.position);
