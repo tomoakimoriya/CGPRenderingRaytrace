@@ -14,19 +14,19 @@
         return this.mcolor;
     }
 
-    private mia: number;
-    get ia(): number {
-        return this.mia;
+    private mka: number;
+    get ka(): number {
+        return this.mka;
     }
 
-    private mid: number;
-    get id(): number {
-        return this.mid;
+    private mkd: number;
+    get kd(): number {
+        return this.mkd;
     }
 
-    private mis: number;
-    get is(): number {
-        return this.mis;
+    private mks: number;
+    get ks(): number {
+        return this.mks;
     }
 
     private mn: number;
@@ -34,7 +34,7 @@
         return this.mn;
     }
 
-    constructor(position: THREE.Vector3, size: THREE.Vector3, color: THREE.Color, ia: number, id: number, is: number, n: number)
+    constructor(position: THREE.Vector3, size: THREE.Vector3, color: THREE.Color, ka: number, kd: number, ks: number, n: number)
     {
         this.mpositioin = new THREE.Vector3();
         this.mpositioin.copy(position);
@@ -42,9 +42,9 @@
         this.msize.copy(size);
         this.mcolor = new THREE.Color;
         this.mcolor.copy(color);
-        this.mia = ia;
-        this.mid = id;
-        this.mis = is;
+        this.mka = ka;
+        this.mkd = kd;
+        this.mks = ks;
         this.mn = n;
     }
 
