@@ -57,9 +57,7 @@ class ThreeJSContainer {
         for (let y = 0; y < img.height; y++) {
             for (let x = 0; x < img.width; x++) {
                 const target = new THREE.Vector3(x - img.width / 2, -y + img.height / 2, 0);
-                const v = new THREE.Vector3();
-                v.copy(target);
-                v.sub(cameraPos).normalize();
+                const v = target.sub(cameraPos).normalize();
 
                 const nearest = { shape: <BaseShape>undefined, t: Number.MAX_VALUE }
                 for (let i = 0; i < this.shapes.length; i++) {
