@@ -13,14 +13,5 @@
       "webRoot": "${workspaceFolder}",
       "sourceMaps": true,
     },
-    {
-      "type": "edge",
-      "request": "launch",
-      "name": "Launch Edge",
-      "url": "http://localhost:8080",
-      "preLaunchTask": "npm: start",
-      "webRoot": "${workspaceFolder}",
-      "sourceMaps": true,
-    },
   ]
 }
