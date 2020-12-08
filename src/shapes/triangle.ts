@@ -51,8 +51,8 @@ export class Triangle implements BaseShape {
         this.mn = n;
 
         //法線を計算，時計回りを表面とする
-        var v1 = new THREE.Vector3().subVectors(this.verticies[2], this.verticies[0]);
-        var v2 = new THREE.Vector3().subVectors(this.verticies[1], this.verticies[0]);
+        const v1 = new THREE.Vector3().subVectors(this.verticies[2], this.verticies[0]);
+        const v2 = new THREE.Vector3().subVectors(this.verticies[1], this.verticies[0]);
         this.mnormal = new THREE.Vector3().crossVectors(v1, v2).normalize();
     }
 
