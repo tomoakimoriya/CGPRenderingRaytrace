@@ -72,7 +72,7 @@ class ThreeJSContainer {
 
                 const index = x + y * img.width;
                 if (nearest.shape != undefined) {
-                    const hitpos = cameraPos.add(v.multiplyScalar(nearest.t));
+                    const hitpos = cameraPos.clone().add(v.clone().multiplyScalar(nearest.t));
                     const objcol = nearest.shape.calcShading(this.pointlight, hitpos, cameraPos);
 
                     img.data[index * 4 + 0] = objcol.r;   //R
