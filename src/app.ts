@@ -7,9 +7,9 @@ import { Triangle } from "./shapes/triangle";
 import rtScene from "./scenes/scene1";
 
 class ThreeJSContainer {
-    private bgcolor: THREE.Color;
-    private pointlight: PointLight;
-    private shapes: BaseShape[];
+    private bgcolor!: THREE.Color;
+    private pointlight!: PointLight;
+    private shapes!: BaseShape[];
 
     constructor() {
 
@@ -54,6 +54,9 @@ class ThreeJSContainer {
         canvas.style.margin = "10px";
 
         const context = canvas.getContext("2d");
+        if (!context) {
+            throw new Error("2D canvas context is not available.");
+        }
 
         const img = new ImageData(canvas.width, canvas.height);
         for (let y = 0; y < img.height; y++) {
@@ -61,7 +64,7 @@ class ThreeJSContainer {
                 const target = new THREE.Vector3(x - img.width / 2, -y + img.height / 2, 0);
                 const v = target.sub(cameraPos).normalize();
 
-                const nearest = { shape: <BaseShape>undefined, t: Number.MAX_VALUE }
+                const nearest = { shape: <BaseShape><unknown>undefined, t: Number.MAX_VALUE }
                 for (let i = 0; i < this.shapes.length; i++) {
                     const tmpt = this.shapes[i].calcT(cameraPos, v);
                     if (tmpt > 0 && (tmpt < nearest.t)) {
